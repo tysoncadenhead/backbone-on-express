@@ -2,6 +2,7 @@ Backbone on Express is a MV* framework that leverages Backbone.js for the client
 
 # Roadmap
 
+* Error Logging
 * Front-End Helpers
 * Documentation
 * Scaffolding (Anvil)

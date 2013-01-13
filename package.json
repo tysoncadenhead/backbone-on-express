@@ -1,14 +1,17 @@
 {
   "name": "backbone-on-express",
-  "version": "0.0.0",
-  "description": "ERROR: No README.md file found!",
-  "main": "server.js",
+  "version": "0.0.1",
+  "description": "Backbone for node",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "repository": "",
-  "author": "Tyson Cadenhead",
+  "author": {
+    "name": "Tyson Cadenhead",
+    "email": "tysoncadenhead@gmail.com"
+  },
   "license": "BSD",
   "dependencies": {
     "backbone": ">=0.9.9",
@@ -17,6 +20,11 @@
     "requirejs": ">=2.1.2",
     "express-ejs-layouts": ">=0.3.1",
     "colors": ">=0.6.0-1",
-    "open": ">=0.0.2"
+    "open": ">=0.0.2",
+    "amdefine": ">=0.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tysoncadenhead/backbone-on-express"
   }
 }
