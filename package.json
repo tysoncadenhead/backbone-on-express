@@ -1,0 +1,22 @@
+{
+  "name": "backbone-on-express",
+  "version": "0.0.0",
+  "description": "ERROR: No README.md file found!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": "",
+  "author": "Tyson Cadenhead",
+  "license": "BSD",
+  "dependencies": {
+    "backbone": ">=0.9.9",
+    "express": ">=3.0.5",
+    "underscore": ">=1.4.3",
+    "requirejs": ">=2.1.2",
+    "express-ejs-layouts": ">=0.3.1",
+    "colors": ">=0.6.0-1",
+    "open": ">=0.0.2"
+  }
+}
