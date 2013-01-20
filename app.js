@@ -1,5 +1,5 @@
 /*jslint node: true */
-/*global underscore, backbone, requirejs, express, _, open */
+/*global underscore, backbone, requirejs, express, _, app */
 
 module.exports = function (config, done) {
 
@@ -19,9 +19,9 @@ module.exports = function (config, done) {
 		});
 
 		// Get the schema
-		_.each(fs.readdirSync( config.rootPath + 'app/db' ), function (file) {
-			require( config.rootPath + 'app/db/' + file );
-		});
+		/*_.each(fs.readdirSync( app.config.require.baseUrl +  app.config.require.paths.schema ), function (file) {
+			require( config.rootPath + app.config.require.baseUrl +  app.config.require.paths.schema + '/' + file );
+		});*/
 
 		// Controllers
 		require( config.rootPath + 'app/controllers/app_controller.js');
@@ -48,13 +48,12 @@ module.exports = function (config, done) {
 		app.listen(app.config.port);
 
 		app.use(express['static'](app.config['public']));
+		app.use(express['static']( __dirname + '/public' ));
 
 		// Get the routes
 		require( config.rootPath + 'app/config/routes.js' );
 
-		if (app.config.open) {
-			open(app.config.url + ':' + app.config.port);
-		}
+		app.log('Users can now access ' + app.config.url + ':' + app.config.port + '\n');
 
 	}
 

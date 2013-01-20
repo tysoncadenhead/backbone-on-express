@@ -1,11 +1,9 @@
-/*jslint node: true */
-/*global Backbone, requirejs, _ */
+define([
+	'backbone'
+], function (b) {
 
-module.exports = function (express, app) {
-
-	'use strict';
-
-  (function () {
+	// Validation
+	(function () {
 
     _.extend(Backbone.Model.prototype, {
 
@@ -55,4 +53,4 @@ module.exports = function (express, app) {
 
   }.call(this));
 
-};
+});
