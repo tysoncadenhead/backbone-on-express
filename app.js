@@ -55,6 +55,10 @@ module.exports = function (config, done) {
 
 		app.log('Users can now access ' + app.config.url + ':' + app.config.port + '\n');
 
+		if (typeof done === 'function') {
+			done(app);
+		}
+
 	}
 
 	// Load all of the dependencies from the package.json file and make them global variables
