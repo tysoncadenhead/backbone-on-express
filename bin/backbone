@@ -1,0 +1,31 @@
+#!/usr/bin/env node
+
+var fs = require('fs'),
+		sys = require('util'),
+		server = process.cwd() + '/server.js',
+		args = process.argv.slice(2),
+		command = args.shift();
+
+switch (command) {
+	case '-h':
+	case '--help':
+		sys.puts(
+			'Need some help?\n\n' +
+			'Options:\n' +
+			'-h --help        Provides the help menu\n' +
+			'-g --gen [type]  Generates the scaffold\n' +
+			'-t --test        Runs unit tests\n'
+		);
+	break;
+	case '-g':
+	case '--gen':
+		sys.puts('ls -la anvil gen boe:' + process.argv.slice(3));
+	break;
+	case '-t':
+	case '--test':
+		sys.puts('ls -la anvil test';
+	break;
+	default:
+		app = require( server );
+	break;
+}
