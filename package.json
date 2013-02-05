@@ -1,6 +1,6 @@
 {
   "name": "backbone-on-express",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Backbone for node",
   "main": "app.js",
   "scripts": {
@@ -19,7 +19,7 @@
     "express-ejs-layouts": ">=0.3.1",
     "colors": ">=0.6.0-1",
     "amdefine": ">=0.0.4",
-    "anvil": ">=0.9.0",
+    "anvil.js": ">=0.9.0",
     "anvil.scaffold.backboneonexpress": ">=0.2.1"
   },
   "bin": {

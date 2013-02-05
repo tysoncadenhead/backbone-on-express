@@ -18,11 +18,6 @@ module.exports = function (config, done) {
 			}
 		});
 
-		// Get the schema
-		/*_.each(fs.readdirSync( app.config.require.baseUrl +  app.config.require.paths.schema ), function (file) {
-			require( config.rootPath + app.config.require.baseUrl +  app.config.require.paths.schema + '/' + file );
-		});*/
-
 		// Controllers
 		require( config.rootPath + 'app/controllers/app_controller.js');
 		_.each(fs.readdirSync( config.rootPath + 'app/controllers' ), function (file) {
@@ -64,7 +59,9 @@ module.exports = function (config, done) {
 	// Load all of the dependencies from the package.json file and make them global variables
 	for (dependency in pkg.dependencies) {
 		if (pkg.dependencies.hasOwnProperty(dependency)) {
-			global[dependency] = require(dependency);
+			if (dependency !== 'anvil.js') {
+				global[dependency] = require(dependency);
+			}
 		}
 	}
 
