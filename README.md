@@ -20,11 +20,16 @@ anvil gen boe:crud
 backbone server
 ```
 
+# API Documentation
+Backbone on Express uses Backbone, so everything that Backbone can do can also be done here.
+
+Additionally, the [API Documentation](https://github.com/tysoncadenhead/backbone-on-express/wiki) outlines methods and functionality that is provided by Backbone on Express.
+
 # Roadmap
 
 * Error Logging
 * ~~Front-End Helpers~~
-* Documentation
+* ~~Documentation~~
 * ~~Scaffolding (Anvil)~~
 * ~~Build Process (Anvil)~~
 * ~~Unit Testing (Mocha)~~
