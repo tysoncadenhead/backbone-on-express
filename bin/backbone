@@ -4,9 +4,12 @@ var fs = require('fs'),
 		sys = require('util'),
 		server = process.cwd() + '/server.js',
 		args = process.argv.slice(2),
-		command = args.shift();
+		command = args.shift(),
+		exec = require('child_process').exec,
+		spawn = require('child_process').spawn;
 
 switch (command) {
+
 	case '-h':
 	case '--help':
 		sys.puts(
@@ -17,15 +20,30 @@ switch (command) {
 			'-t --test        Runs unit tests\n'
 		);
 	break;
+
 	case '-g':
 	case '--gen':
-		sys.puts('ls -la anvil gen boe:' + process.argv.slice(3));
+		console.log('anvil gen boe:' + process.argv.slice(3));
+		exec('anvil gen boe:' + process.argv.slice(3), function (error, stdout, stderr) {
+
+		});
 	break;
+
 	case '-t':
 	case '--test':
-		sys.puts('ls -la anvil test';
+		exec('anvil --mocha', function (error, stdout, stderr) {
+	    if (error !== null) {
+	      console.log(error);
+      } else if (stderr) {
+      	console.log(stderr);
+	    } else {
+	    	console.log(stdout);
+	    }
+		});
 	break;
+
 	default:
 		app = require( server );
 	break;
+	
 }

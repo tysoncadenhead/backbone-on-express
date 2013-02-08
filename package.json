@@ -1,6 +1,6 @@
 {
   "name": "backbone-on-express",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Backbone for node",
   "main": "app.js",
   "scripts": {
@@ -23,7 +23,8 @@
     "anvil.scaffold.backboneonexpress": ">=0.2.1"
   },
   "bin": {
-    "backbone": "./bin/backbone"
+    "backbone": "./bin/backbone",
+    "backbone-on-express": "app.js"
   },
   "repository": {
     "type": "git",
