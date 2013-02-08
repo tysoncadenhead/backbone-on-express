@@ -1,49 +1,28 @@
 #!/usr/bin/env node
 
-var fs = require('fs'),
-		sys = require('util'),
+var sys = require('util'),
 		server = process.cwd() + '/server.js',
 		args = process.argv.slice(2),
-		command = args.shift(),
-		exec = require('child_process').exec,
-		spawn = require('child_process').spawn;
+		command = args.shift();
 
 switch (command) {
 
+	case 'server':
+		require( server );
+	break;
+	
 	case '-h':
 	case '--help':
+	default:
 		sys.puts(
-			'Need some help?\n\n' +
-			'Options:\n' +
-			'-h --help        Provides the help menu\n' +
-			'-g --gen [type]  Generates the scaffold\n' +
-			'-t --test        Runs unit tests\n'
+			' _ _  ___  _    ___ \n| | || __>| |  | . \\\n|   || _> | |_ |  _/\n|_|_||___>|___||_|  \n                    \n' +
+			'BACKBONE ON EXPRESS OPTIONS:\n' +
+			'backbone                      - Provides the help menu\n' +
+			'backbone server [options]     - Starts the Backbone On Express server\n\n' +
+			'ANVIL OPTIONS:\n' +
+			'anvil gen boe                 - Generates the application scaffold\n' +
+			'anvil gen boe:crud            - Generates scaffold for specific model views and controller\n'
 		);
 	break;
 
-	case '-g':
-	case '--gen':
-		console.log('anvil gen boe:' + process.argv.slice(3));
-		exec('anvil gen boe:' + process.argv.slice(3), function (error, stdout, stderr) {
-
-		});
-	break;
-
-	case '-t':
-	case '--test':
-		exec('anvil --mocha', function (error, stdout, stderr) {
-	    if (error !== null) {
-	      console.log(error);
-      } else if (stderr) {
-      	console.log(stderr);
-	    } else {
-	    	console.log(stdout);
-	    }
-		});
-	break;
-
-	default:
-		app = require( server );
-	break;
-	
 }

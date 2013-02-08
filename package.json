@@ -1,6 +1,6 @@
 {
   "name": "backbone-on-express",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Backbone for node",
   "main": "app.js",
   "scripts": {
