@@ -1,6 +1,6 @@
 # Backbone on Express
 
-Backbone on Express is a MV* framework that leverages Backbone.js for the client-side and server-side with some help from the Express framework. The idea is to share as many components between the server-side and client-side as possible. It is currently in an early alpha stage, but documentation will be coming soon.
+Backbone on Express is a MV* framework that leverages [Backbone.js](http://backbonejs.org/) for the client-side and server-side with some help from the [Express framework](http://expressjs.com/). The idea is to share as many components between the server-side and client-side as possible.
 
 # Installation
 
