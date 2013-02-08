@@ -1,14 +1,4 @@
- ___ ___ ___ _ _____ ___ _ _ ___   ___ _ _   _____  _ ___ ___ ___ ___ ___ 
- 
-| . | . |  _| / | . | . | \ | __> | . | \ | | __\ \/ | . | . | __/ __/ __>
-
-| . |   | <_|  \| . | | |   | _>  | | |   | | _> \ \ |  _|   | _>\__ \__ \
-
-|___|_|_`___|_\_|___`___|_\_|___> `___|_\_| |____/\_\|_| |_\_|___<___<___/
-
-                                                                          
-
-# What is it?
+# Backbone on Express
 
 Backbone on Express is a MV* framework that leverages Backbone.js for the client-side and server-side with some help from the Express framework. The idea is to share as many components between the server-side and client-side as possible. It is currently in an early alpha stage, but documentation will be coming soon.
 
