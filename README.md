@@ -1,4 +1,6 @@
-Backbone on Express is a MV* framework that leverages Backbone.js for the client-side and server-side with some help from the Express framework. The idea is to share as many components between the server-side and client-side as possible. It is currently in an early alpha stage, but documentation will be coming soon.
+# Backbone on Express
+
+Backbone on Express is a MV* framework that leverages [Backbone.js](http://backbonejs.org/) for the client-side and server-side with some help from the [Express framework](http://expressjs.com/). The idea is to share as many components between the server-side and client-side as possible.
 
 # Installation
 
@@ -20,11 +22,16 @@ anvil gen boe:crud
 backbone server
 ```
 
+# API Documentation
+Backbone on Express uses Backbone, so everything that Backbone can do can also be done here.
+
+Additionally, the [API Documentation](https://github.com/tysoncadenhead/backbone-on-express/wiki) outlines methods and functionality that is provided by Backbone on Express.
+
 # Roadmap
 
 * Error Logging
 * ~~Front-End Helpers~~
-* Documentation
+* ~~Documentation~~
 * ~~Scaffolding (Anvil)~~
 * ~~Build Process (Anvil)~~
 * ~~Unit Testing (Mocha)~~
