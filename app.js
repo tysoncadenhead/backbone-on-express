@@ -45,6 +45,15 @@ module.exports = function (config, done) {
 		app.use(express['static'](app.config['public']));
 		app.use(express['static']( __dirname + '/public' ));
 
+		// Error Handler
+		app.use(function (err, req, res, next) {
+			if (err) {
+				console.log(err);
+				res.send(500, 'Something broke!');
+				fs.appendFileSync(config.rootPath + 'log/error.log', err, 'utf8');
+			}
+		});
+
 		// Get the routes
 		require( config.rootPath + 'app/config/routes.js' );
 
