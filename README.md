@@ -29,7 +29,7 @@ Additionally, the [API Documentation](https://github.com/tysoncadenhead/backbone
 
 # Roadmap
 
-* Error Logging
+* ~~Error Logging~~
 * ~~Front-End Helpers~~
 * ~~Documentation~~
 * ~~Scaffolding (Anvil)~~
