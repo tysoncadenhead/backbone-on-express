@@ -20,6 +20,7 @@ module.exports = function (config, done) {
 
 		// Controllers
 		require( config.rootPath + 'app/controllers/app_controller.js');
+		require( './lib/controllers/errors_controller.js');
 		_.each(fs.readdirSync( config.rootPath + 'app/controllers' ), function (file) {
 			if (file !== 'app_controller.js') {
 				require( config.rootPath + 'app/controllers/' + file );
@@ -46,13 +47,7 @@ module.exports = function (config, done) {
 		app.use(express['static']( __dirname + '/public' ));
 
 		// Error Handler
-		app.use(function (err, req, res, next) {
-			if (err) {
-				console.log(err);
-				res.send(500, 'Something broke!');
-				fs.appendFileSync(config.rootPath + 'log/error.log', err, 'utf8');
-			}
-		});
+		app.use(app.config.errorHandler);
 
 		// Get the routes
 		require( config.rootPath + 'app/config/routes.js' );
@@ -84,8 +79,23 @@ module.exports = function (config, done) {
 
 	// Add configuration to the application
 	app.config = _.extend(config, _.extend(
+
 		require( config.rootPath + 'app/config/environments/global.json' ),
-		require( config.rootPath + 'app/config/environments/' + (app.settings.env || 'development') + '.json'))
+		require( config.rootPath + 'app/config/environments/' + (app.settings.env || 'development') + '.json')), {
+
+			// The default error handler
+			errorHandler: function (err, req, res, next) {
+				console.log(err);
+				fs.appendFileSync(config.rootPath + 'log/error.log', err, 'utf8');
+		  },
+
+		  // The Access Log Writer
+		  accessHandler: function (template, data) {
+				fs.appendFileSync(config.rootPath + 'log/access.log', template + '\n' + new Date().getDate() + '/' + new Date().getMonth() + '/' + new Date().getFullYear() + ' : ' + new Date().getTime() + '\n\n', 'utf8');
+		  }
+
+		}
+
 	);
 
 	// Pass the configuration to requirejs
