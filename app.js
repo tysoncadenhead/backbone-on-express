@@ -7,7 +7,8 @@ module.exports = function (config, done) {
 
 	var pkg = require( './package.json' ),
 			fs = require( 'fs' ),
-			dependencies = {}, dependency;
+			dependencies = {}, dependency,
+			passport = require('passport');
 
 	function startApp () {
 
@@ -17,6 +18,11 @@ module.exports = function (config, done) {
 				require( __dirname + '/lib/' + file )(express, app);
 			}
 		});
+
+		if (app.config.passport) {
+			app.use(passport.initialize());
+			app.use(passport.session());
+		}
 
 		// Controllers
 		require( config.rootPath + 'app/controllers/app_controller.js');
@@ -48,6 +54,8 @@ module.exports = function (config, done) {
 
 		// Error Handler
 		app.use(app.config.errorHandler);
+
+		app.use(app.router);
 
 		// Get the routes
 		require( config.rootPath + 'app/config/routes.js' );
